@@ -29,6 +29,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w3r-Ch-ihS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-dT-hRK" userLabel="MinusButton" customClass="PushButton" customModule="CoreGraphicsRW" customModuleProvider="target">
                                 <rect key="frame" x="162.5" y="513.5" width="50" height="50"/>
@@ -42,17 +45,55 @@
                                         <color key="value" red="0.93333333333333335" green="0.30196078431372547" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3lR-YH-Xq2"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrI-lf-ZGw" customClass="CounterView" customModule="CoreGraphicsRW" customModuleProvider="target">
+                                <rect key="frame" x="72.5" y="123.5" width="230" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi5-uU-HUk">
+                                        <rect key="frame" x="104" y="93.5" width="22" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Lte-6g-Ug9"/>
+                                    <constraint firstItem="pi5-uU-HUk" firstAttribute="centerY" secondItem="XrI-lf-ZGw" secondAttribute="centerY" id="UkG-lZ-OGQ"/>
+                                    <constraint firstItem="pi5-uU-HUk" firstAttribute="centerX" secondItem="XrI-lf-ZGw" secondAttribute="centerX" id="gNQ-tC-7fu"/>
+                                    <constraint firstAttribute="width" constant="230" id="rWy-lw-oEA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d2y-Ok-1Nc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="100" id="2Bp-RB-av8"/>
+                            <constraint firstItem="d2y-Ok-1Nc" firstAttribute="top" secondItem="XrI-lf-ZGw" secondAttribute="bottom" constant="40" id="4KP-9y-PiY"/>
                             <constraint firstItem="d2y-Ok-1Nc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CG3-aK-bAt"/>
                             <constraint firstItem="gt7-dT-hRK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NvI-zI-ctV"/>
+                            <constraint firstItem="XrI-lf-ZGw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QCY-zN-dfg"/>
                             <constraint firstItem="gt7-dT-hRK" firstAttribute="top" secondItem="d2y-Ok-1Nc" secondAttribute="bottom" constant="20" id="vDN-Pw-tEY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="pi5-uU-HUk" id="mhh-OZ-5B2"/>
+                        <outlet property="counterView" destination="XrI-lf-ZGw" id="eIz-7P-BK3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
